@@ -38,9 +38,11 @@ export default function AutoGrid() {
   const [compassionGrade, setCompassionGrade] = useState('');
   const [checkError, setCheckError] = useState(false);
 
-  const totquesVal = saveQuestionValue();
+  useEffect(() => {
+    saveQuestionValue();
+  }, [quesVal]);
 
-  function saveQuestionValue(totquesVal) {
+  function saveQuestionValue() {
     saveQue[quesVal[0] - 1] = quesVal[2];
   }
 
