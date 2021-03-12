@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import LayoutProqol from '../components/proqol/LayoutProqol'
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
     root: {

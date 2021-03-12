@@ -4,10 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
-import { Button } from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,7 +28,7 @@ export default function Questions(props) {
 
     const handleChange = (event) => {
         setQue(event.target.value);
-        props.onQuestionValueChange(event.target.value)
+        props.onQuestionValueChange([props.quesNbr, props.quesType, event.target.value ]);
       };
 
     return (
@@ -41,20 +39,24 @@ export default function Questions(props) {
                 >
                     {props.actQues}
                 </Typography>
-                <FormControl className={classes.formControl}>
-                    <InputLabel id="queLbl">Please select a value</InputLabel>
-                    <Select
-                    labelId="queLbl"
-                    id={props.queId}
-                    value={curQues}
-                    onChange = {handleChange}
+                <FormControl fullWidth className={classes.formControl}>
+                    <TextField
+                      id="outlined-select-currency"
+                      fullWidth
+                      select
+                      label="Select"
+                      value={curQues}
+                      onChange={handleChange}
+                      helperText="Please select your response"
+                      variant="outlined"
+                      error={props.chkError && curQues === '' ? true : false}
                     >
-                    <MenuItem key={props.queId + '_1'} value={props.queVal === 'norm' ? 1 : 5}>1 - Never</MenuItem>
-                    <MenuItem key={props.queId  + '_2'} value={props.queVal === 'norm' ? 2 : 4}>2 - Rarely</MenuItem>
-                    <MenuItem key={props.queId  + '_3'} value={3}>3 - Sometimes</MenuItem>
-                    <MenuItem key={props.queId + '_4'} value={props.queVal === 'norm' ? 4 : 2}>4 - Often</MenuItem>
-                    <MenuItem key={props.queId + '_5'} value={props.queVal === 'norm' ? 5 : 1}>5 - Very Often</MenuItem>
-                    </Select>
+                      <MenuItem key={props.queId + '_1'} value={props.queVal === 'norm' ? 1 : 5}>1 - Never</MenuItem>
+                      <MenuItem key={props.queId  + '_2'} value={props.queVal === 'norm' ? 2 : 4}>2 - Rarely</MenuItem>
+                      <MenuItem key={props.queId  + '_3'} value={3}>3 - Sometimes</MenuItem>
+                      <MenuItem key={props.queId + '_4'} value={props.queVal === 'norm' ? 4 : 2}>4 - Often</MenuItem>
+                      <MenuItem key={props.queId + '_5'} value={props.queVal === 'norm' ? 5 : 1}>5 - Very Often</MenuItem>
+                    </TextField>
                 </FormControl>
             </Paper>
         </div>

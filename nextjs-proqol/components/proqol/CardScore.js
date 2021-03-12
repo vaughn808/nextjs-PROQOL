@@ -51,17 +51,16 @@ export default function BasicTable(props) {
       <TableHead>
           <TableRow>
             <StyledTableCell align="center" colSpan={2}>{props.tblTitle}</StyledTableCell>
-            <StyledTableCell></StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow key={row.name}>
+            <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
                 {row.name}
               </StyledTableCell>
               <StyledTableCell align="right">{row.score}</StyledTableCell>
-            </TableRow>
+            </StyledTableRow>
           ))}
         </TableBody>
       </Table>
