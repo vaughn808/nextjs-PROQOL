@@ -28,7 +28,7 @@ export default function Questions(props) {
 
     const handleChange = (event) => {
         setQue(event.target.value);
-        props.onQuestionValueChange([props.quesNbr, props.quesType, event.target.value ]);
+        props.onQuestionValueChange([props.quesNbr, props.quesType, event.target.value]);
       };
 
     return (
@@ -51,11 +51,11 @@ export default function Questions(props) {
                       variant="outlined"
                       error={props.chkError && curQues === '' ? true : false}
                     >
-                      <MenuItem key={props.queId + '_1'} value={props.queVal === 'norm' ? 1 : 5}>1 - Never</MenuItem>
-                      <MenuItem key={props.queId  + '_2'} value={props.queVal === 'norm' ? 2 : 4}>2 - Rarely</MenuItem>
-                      <MenuItem key={props.queId  + '_3'} value={3}>3 - Sometimes</MenuItem>
-                      <MenuItem key={props.queId + '_4'} value={props.queVal === 'norm' ? 4 : 2}>4 - Often</MenuItem>
-                      <MenuItem key={props.queId + '_5'} value={props.queVal === 'norm' ? 5 : 1}>5 - Very Often</MenuItem>
+                      <MenuItem key={props.keyed} value={props.queVal === 'norm' ? 1 : 5}>1 - Never</MenuItem>
+                      <MenuItem key={props.keyed} value={props.queVal === 'norm' ? 2 : 4}>2 - Rarely</MenuItem>
+                      <MenuItem key={props.keyed} value={3}>3 - Sometimes</MenuItem>
+                      <MenuItem key={props.keyed} value={props.queVal === 'norm' ? 4 : 2}>4 - Often</MenuItem>
+                      <MenuItem key={props.keyed} value={props.queVal === 'norm' ? 5 : 1}>5 - Very Often</MenuItem>
                     </TextField>
                 </FormControl>
             </Paper>

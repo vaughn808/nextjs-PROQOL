@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router'
 import clsx from 'clsx';
-import { makeStyles, useTheme, } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -108,7 +108,7 @@ export default function Nav() {
       >
         <Toolbar>
           <Typography variant="h6" noWrap className={classes.title}>
-            {router.pathname === "/" ? 'PeaceBuilding' : router.pathname === "/proqol" ? 'PROFESSIONAL QUALITY OF LIFE SCALE (PROQOL)' : 'Resources'}
+            {router.pathname === "/" ? 'Minnesota Peacebuilding Leadership Institute' : router.pathname === "/proqol" ? 'PROFESSIONAL QUALITY OF LIFE SCALE (PROQOL)' : 'Resources'}
           </Typography>
           <IconButton
             color="inherit"

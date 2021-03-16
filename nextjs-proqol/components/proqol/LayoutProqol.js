@@ -139,7 +139,8 @@ export default function AutoGrid() {
           <Grid container spacing={3}>
             <Grid item xs={12}>
               {text.map((txt, index) => (
-                <Questions 
+                <Questions
+                  keyed={index.toString()} 
                   QuestionValue={quesVal} 
                   onQuestionValueChange = {setQuesVal}
                   quesNbr = {txt.question_nbr}

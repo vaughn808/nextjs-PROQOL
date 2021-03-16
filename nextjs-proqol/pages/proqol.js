@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import LayoutProqol from '../components/proqol/LayoutProqol'
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -41,6 +40,7 @@ const proqol = () => {
             </Typography>    
             <Typography 
                 color = 'textPrimary'
+                paragraph
                 >
                     When you [help] people you have direct contact with their lives. As you may have found, your compassion for those you [help] 
                     can affect you in positive and negative ways. Below are some questions about your experiences, both positive and negative, 
