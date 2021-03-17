@@ -18,7 +18,8 @@ const useStyles = makeStyles((theme) => ({
       },
   }));
 
-const CatDescriptions = () => {
+export default function CatDescriptions() {
+
     const classes = useStyles();
 
     return (
@@ -85,4 +86,3 @@ const CatDescriptions = () => {
     )
 }
 
-export default CatDescriptions
