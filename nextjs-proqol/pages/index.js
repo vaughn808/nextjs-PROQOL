@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const proqol = () => {
+export default function Home() {
     const classes = useStyles();
 
     return (
@@ -60,5 +60,4 @@ const proqol = () => {
     )
 }
 
-export default proqol
 
