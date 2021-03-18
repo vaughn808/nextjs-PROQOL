@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
@@ -37,6 +37,9 @@ export default function AutoGrid() {
   const [compassionScore, setCompassionScore] = useState(0);
   const [compassionGrade, setCompassionGrade] = useState('');
   const [checkError, setCheckError] = useState(false);
+
+  const myRef = useRef(null)
+  const executeScroll = () => myRef.current.scrollIntoView() 
 
   useEffect(() => {
     saveQuestionValue();
@@ -78,6 +81,7 @@ export default function AutoGrid() {
       setTraumaScore(scrT);
       setTraumaGrade(getGrade(scrT));
       setCheckError(false);
+      executeScroll();
     }
   }
 
@@ -162,7 +166,7 @@ export default function AutoGrid() {
         </Grid>
         <Grid item xs />
       </Grid>
-      <Grid className={classes.tableScore} container spacing={3}>
+      <Grid ref={myRef} className={classes.tableScore} container spacing={3}>
         <Grid item xs />
         <Grid item xs={12} sm={6}>
           <TableScore 
